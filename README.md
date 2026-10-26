@@ -84,4 +84,4 @@ The app loads saved models and does not retrain on uploaded data.
 
 ## 7. Live Streamlit App
 
-[Add the deployed app URL after deployment.]
+[Open the live Streamlit app](https://indu-ml-assignment-2.streamlit.app/)
