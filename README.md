@@ -2,8 +2,7 @@
 
 ## 1. Problem Statement
 
-[Explain what the project predicts, why spam classification is useful,
-and why both missed spam and incorrectly blocked legitimate emails matter.]
+This project classifies emails as spam (1) or not spam (0) using numeric email features. Five classification models are trained and compared on the same held-out test set. The Streamlit application lets users upload labelled test data and evaluate saved models without retraining. Both missed spam and legitimate emails incorrectly flagged as spam matter when assessing a classifier.
 
 ## 2. Dataset Description
 
@@ -62,12 +61,12 @@ Results below are from the held-out test set.
 
 | Model | Observation |
 |---|---|
-| Logistic Regression | [Your observation] |
-| Decision Tree | [Your observation] |
-| KNN | [Your observation] |
-| Gaussian Naive Bayes | [Your observation] |
-| SVM | [Your observation] |
-| Overall winner | [Your choice and justification] |
+| Logistic Regression | Highest accuracy (0.9294), AUC (0.9702), F1 (0.9093), and MCC (0.8518). It flags 28 legitimate emails and misses 37 spam emails. |
+| Decision Tree | Accuracy is 0.9110, with 43 false positives and 39 missed spam emails. It scores below Logistic Regression on all six metrics on this test set. |
+| KNN | AUC (0.9506) exceeds the Decision Tree's, while accuracy (0.9077), recall, F1, and MCC are lower. It flags 41 legitimate emails and misses 44 spam emails. |
+| Gaussian Naive Bayes | Highest recall (0.9532), detecting 346 of 363 spam emails. It misses only 17 spam emails but flags 136 legitimate emails, reducing precision to 0.7178. |
+| SVM | Highest precision (0.9277) and fewest false positives (25). It misses 42 spam emails and has accuracy of 0.9273, close to Logistic Regression. |
+| Overall winner | Logistic Regression offers the strongest overall balance here, leading on accuracy, AUC, F1, and MCC. Its accuracy advantage over SVM is only two test records, so these results do not establish universal superiority. |
 
 ## 6. Run the App Locally
 
